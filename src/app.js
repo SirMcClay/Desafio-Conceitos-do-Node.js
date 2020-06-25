@@ -78,7 +78,9 @@ app.delete("/repositories/:id", validateRepositoryId, (request, response) => {
 
   repositories.splice(repositoryIndex, 1);
 
-  return response.status(204).send();
+  //return response.status(204).send();
+
+  return response.json(repositories);
 });
 
 app.post("/repositories/:id/like", validateRepositoryId, (request, response) => {
